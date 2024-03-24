@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BATMAN</title>
+  </head>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel = "stylesheet" href = "new.css">
+  <body>
+   <script src = "new.js"></script>
+
+
+   <h1 class= "text-danger text-center">I AM BATMAN
+   </h1>
+    <img src= "batman.jpg" class = "img-responsive">
+    <br>
+    <div class = "row">
+    <div class = "col-md-6">
+      <div class = "well target">
+    <button id = "one" class = "btn-block btn btn-primary target"><i class = "fas fa-thumbs-up">BATMAN</i>
+    </button> 
+    </div>
+    </div>
+    <div class = "col-md-6">
+      <div class = "well target">
+    <button class = "btn-block btn-danger btn btn-primary target">No Button is more dangerous than Batman
+    </button>
+    </div>
+    </div>
+    </div> 
+   
+    <!-- Hello this is a comment in html code -->
+  </body>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("button").addClass("animated bounce");
+      $(".well").addClass("animated fadeOut");
+      $("button").css("color" , "red");
+      $("#one").prop("disabled",true);
+      $("#one").remove();
+      $("#one").appendTo(".row");
+      $("body").addClass("animated hinge"); 
+    });
+
+    $("h1").addClass("animated bounce");
+  </script> 
+  <script>
+    console.log("Inside the script elements if I write any js code it will be applied to the code ");
+  </script>
+  <!-- We target an element or class in html using the $ sign as
+    above and then put them in a function and then we add some
+    properties to the selected class or element using addClass
+    or something like that
+  -->
+</html
