@@ -607,5 +607,60 @@ let result1 = add_nums(a, b);
 
 // control flow ☠️☠️☠️☠️☠️
 
+if (2== "2"){
+    console.log(true);
+}
+
+if(2 === "2")
+{
+    console.log(false);
+}
+
+//  using switch cases
+let month = 2;
+
+switch (month) {
+    case 1:
+        console.log(`jan`);
+        break; // must use break after each case
+    case 2:
+        console.log(`feb`);
+        break;
+
+    default:
+        console.log(`don't know month`);
+        break;
+}
+
+// some we just pass variables in if else conditions which are by defualt assumed as 
+// true or false values such as:
+
+let email = "skjhfd@lkjdfg.in"
+
+if (email){
+    console.log(`got email`);
+}
+else {
+    console.log(`didn't get email`);
+}
+
+// so here in above a non empty string is considered as true, so we will see which
+// conditions are by default treu or false
+// by default false values are:
+// 0, "", null, undefined, NaN, 0n, bigInt
+// else all are true values
 
 
+
+
+
+
+
+
+
+///            ☠️☠️☠️☠️☠️  loops  ☠️☠️☠️☠️☠️           ///
+console.log(`looping in a for loop`);
+for (let i = 0; i<10; i++)
+{
+    console.log(i);
+}
