@@ -537,6 +537,75 @@ console.log(add_num2());
 // to immediately invoke function we wrap our function inside () and then use ()
 // immediately to immediately invoke that function to stop golbal scope polution
 
-(function iife_fun () {
+(function iife_fun () { 
+    // it is named iife
     console.log(`iife function`);
-})()
+})(); // this semicolon is necessary
+
+// or use it as arrow function 
+
+( (parameter_here) => {
+    // it is unamed iife0
+    console.log(`${parameter_here} is using arrow iife function`);
+})('arguments_here');
+
+
+
+
+
+
+
+
+
+
+///     js code execution and call
+
+// first of all global execution context is made for sure
+
+// function execution context
+// eval execution context
+
+// code runs in two phase
+// 1) Memory creation phase
+// 2) execution phase
+
+let a = 10;
+let b = 5;
+function add_nums (num1 , num2){
+    let total = num1 + num2;
+    return total;
+}
+
+let result1 = add_nums(a, b);
+
+// so now we will understand how the above piece of code will run
+
+// firstly global execution will occur and it can be seen 
+// by logging a simple "this" in the global scope
+
+// then memory creation will occur so iin this,
+// a,b will be allocated as undefined 
+// add_nums will contain the logic 
+// and result1 will also be undefined 
+
+
+// now execution will occur as below
+// a will be assigned 10, b as 5
+// function is already created 
+// then for assigning result1 a value from the function a "new variable environment "
+// will be created so now everytime the function comes memory phase and execution phase 
+// will occur for that function 
+
+// after the function is executed the that new environment variable is deleted
+
+
+
+
+
+
+
+
+// control flow ☠️☠️☠️☠️☠️
+
+
+
