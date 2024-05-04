@@ -2,11 +2,11 @@
 
 age = 21;// not a good practice to name a varibvale , we should always use the keywords to name the varibales
 
-console.log(age);
+// console.log(age);
 let price = 100;// like this we should declare the varibales
-console.log(price);
+// console.log(price);
 
-console.log(typeof price);// gives the type of the data type of the variable
+// console.log(typeof price);// gives the type of the data type of the variable
 
 // below we are creating a object
 
@@ -16,17 +16,17 @@ let student = {
 }
 
 student.age++;
-console.log("changing the age of the studemnt as student.age++", age);
+// console.log("changing the age of the studemnt as student.age++", age);
 num = '123';
 real_num = 1;
 ans = num + real_num + 1;
-console.log(ans);
-console.log("Object student is :", student);
-console.log("accessing the object vale with the help of the key as object_name.key_name:", student.student_name)
+// console.log(ans);
+// console.log("Object student is :", student);
+// console.log("accessing the object vale with the help of the key as object_name.key_name:", student.student_name)
 
 // operators and conditions loops 
 
-console.table([price, ans, num, real_num]);// console.table is used to print varibales in tabular form
+// console.table([price, ans, num, real_num]);// console.table is used to print varibales in tabular form
 
 // alert("Subham Kumar");  // this alert startement will not work in node js but will work in the browser
 
@@ -47,8 +47,8 @@ let num1 = 1;
 let bool_conversion  = Boolean(num1);
 let str1 = 1468712;
 let string_conversion = String(str1);
-console.log(bool_conversion);
-console.log(string_conversion);
+// console.log(bool_conversion);
+// console.log(string_conversion);
 
 // 1 in boolean is true
 // 0 is false
@@ -58,8 +58,8 @@ console.log(string_conversion);
 // (*) is multiply and (**) is raised to the power;
 
 // JAVASCRIPT starts from the start to end as left to right operation ex:
-console.log("checkout below conversions for strings and number");
-console.table([1+2+"3" , "1" +2 +3]);
+// console.log("checkout below conversions for strings and number");
+// console.table([1+2+"3" , "1" +2 +3]);
 
 /* only two types of data types based on how they are stored in the memory */
 /* 1. Primite data types , => string , number , boolean , null ,undefined  , symbol , binint*/
@@ -90,34 +90,34 @@ let my_obj = {
 let my_name = "Subham Kumar"; // old method 
 let sentence  = `hello my name is ${my_name}`; // new method with variable name inside string
 
-console.log(sentence);
+// console.log(sentence);
 
 let new_name =new String(`SKR1978`); // new keyword helps the string to be treated as object
-console.log(new_name);
-console.log(new_name[2]);
-console.log(new_name.length);
+// console.log(new_name);
+// console.log(new_name[2]);
+// console.log(new_name.length);
 // and just like that there are a lot of methods for strings that can be treated as objects
  
-console.log(new_name.toLowerCase());
-console.log(new_name.indexOf('K'));
-console.log(new_name.charAt(4));
+// console.log(new_name.toLowerCase());
+// console.log(new_name.indexOf('K'));
+// console.log(new_name.charAt(4));
 
 // making a substring byt using the string object operations
 
 let sub_string = new_name.substring(0,3);
-console.log(sub_string);
+// console.log(sub_string);
 
 // using the slice function to string operastions
 
 let sliced_string = new_name.slice(0,3);
-console.log(sliced_string); 
+// console.log(sliced_string); 
 // slice can have negative values , but substring can't have negative values;
 
 
 // there's a method which removes extra spaces from start and end of strings which is , trim;
 
 let spacey_name = "     Subham Kumar     ";
-console.log(spacey_name.trim());
+// console.log(spacey_name.trim());
 
 // ther's more a very useful string method know as : replace that replace a part of a string with another string of your choice
 
@@ -129,20 +129,20 @@ like that from the url instead of spaces , so we can use the replace method to r
 that %20 witht the space*/
 
 let new_url = url.replace(`%20` , ` `);
-console.log(new_url);
+// console.log(new_url);
 
 // .includes() method is used to check if the string contains a particular substring or not
 
 // another very useful method is .split( , ); example is below:
 
 let split_url = new_url.split(`type_name=`);
-console.log(split_url);
+// console.log(split_url);
 
 let new_num = new Number(100);
-console.log(new_num.toString());
-console.log(new_num.toFixed(3)); // defines for how much points we need value
+// console.log(new_num.toString());
+// console.log(new_num.toFixed(3)); // defines for how much points we need value
 
-console.log(Math); // check console on browser to see various function in maths library
+// console.log(Math); // check console on browser to see various function in maths library
 
 
 // .round , .ceil , .floor can be used  for numbers
@@ -158,17 +158,17 @@ console.log(Math); // check console on browser to see various function in maths 
 // now we will be using a maths method that is used in games  like ludo , which is .random
 
 let random_num  = Math.random();
-console.log(random_num);
+// console.log(random_num);
 
-console.log(Math.random());
-console.log((Math.random()*10) + 1);
+// console.log(Math.random());
+// console.log((Math.random()*10) + 1);
 
-console.log (Math.floor(Math.random()*10) + 1);
+// console.log (Math.floor(Math.random()*10) + 1);
 
 const min = 10
 const max = 20
 
-console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+// console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 
 
 
@@ -178,25 +178,25 @@ console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 
 let now_date = new Date();
 
-console.log(now_date);
+// console.log(now_date);
 
 let string_date = now_date.toString();
-console.log(string_date, " toString()");
-console.log(now_date.toDateString(), " toDateString()");
-console.log(now_date.toISOString(), " toISOString()");
-console.log(now_date.toJSON(), " toJSON()");
-console.log(now_date.toLocaleDateString(), " toLocaleString()", "Date is an object");
+// console.log(string_date, " toString()");
+// console.log(now_date.toDateString(), " toDateString()");
+// console.log(now_date.toISOString(), " toISOString()");
+// console.log(now_date.toJSON(), " toJSON()");
+// console.log(now_date.toLocaleDateString(), " toLocaleString()", "Date is an object");
 
 let new_date = new Date("08-14-2004");
 // we can also declare date just like this as of our own choice
 
-console.log(new_date.toLocaleString('default', {
-    weekday:'long'
-}));
+// console.log(new_date.toLocaleString('default', {
+    // weekday:'long'
+// }));
 
 // date can be converted to time in miliseconds starting from january as below:
 
-console.log(new_date.getTime());
+// console.log(new_date.getTime());
 
 // Date.now() gives current date in miliseconds
 
@@ -220,20 +220,20 @@ console.log(new_date.getTime());
 
 let arr = [0, `Subham Kumar`, true, 0.7834587, 'a'];
 // arrays in js are resizable
-console.log(arr);
+// console.log(arr);
 
 let new_arr = new Array(92, "ighh", false);
-console.log(new_arr);
+// console.log(new_arr);
 
 // array methods
 
 arr.push("Rahar");
-console.log(arr);
+// console.log(arr);
 arr.pop();
-console.log(arr);
+// console.log(arr);
 
-console.log(arr.includes('Subham Kumar'));
-console.log(arr.indexOf(true));
+// console.log(arr.includes('Subham Kumar'));
+// console.log(arr.indexOf(true));
 
 // slice , splice
 
@@ -244,22 +244,22 @@ console.log(arr.indexOf(true));
 // we can also push an literal array in our arrays
 let arr1 = arr;
 arr.push(new_arr);
-console.log(arr);
+// console.log(arr);
 // but if we don't want an array to be in an array and just want the content of the arrays to be merged 
 // then we use concat as below
 
 let concated_arr = arr1.concat(new_arr);
-console.log(concated_arr);
+// console.log(concated_arr);
 
 // .join on array converts the array to string and joins all the elements of arrays 
 // seperated with commas
 
 const sliced_arr = arr.slice(1,4);
-console.log(sliced_arr); // this will not change the original array
+// console.log(sliced_arr); // this will not change the original array
 
 const spliced_arr = arr.splice(1,4); // this will affect the original array
-console.log(spliced_arr);
-console.log(arr); 
+// console.log(spliced_arr);
+// console.log(arr); 
 
 
 // two or more arrays can be merged
@@ -276,7 +276,7 @@ let in_arr = [2,3,5, [1,3,4], 5, [3,5,[3,4,6]]];
 
 let open_arr = in_arr.flat(Infinity);
 
-console.log(open_arr);
+// console.log(open_arr);
 
 // 3 imp array methods are Array.from("string") converts the string to 
 // an array of characters 
@@ -314,9 +314,9 @@ let obj2 = {
 // now accessing the object values
 // two methods
 
-console.log(obj2.name);
+// console.log(obj2.name);
 
-console.log(obj2["laptop type"]);
+// console.log(obj2["laptop type"]);
 
 // changing object key values
 
@@ -336,8 +336,8 @@ obj2.fun1 = function(){
     console.log("Hello JS user");
     return 0;
 }
-console.log(obj2);
-console.log(obj2.fun1());
+// console.log(obj2);
+// console.log(obj2.fun1());
 
 obj2.fun3 = function(){
     console.log(`Hello ${this.name}, you are using ${this["laptop type"]}`);/*
@@ -345,7 +345,7 @@ obj2.fun3 = function(){
     to refer to the object the function is in*/
 }
 
-console.log(obj2.fun3());
+// console.log(obj2.fun3());
 
 // other ways to intitiliase a object:
 
@@ -353,7 +353,7 @@ const supercell_user = new Object();
 
 supercell_user.user_name = 'skr1978'
 supercell_user.townhall = 'th11'
-console.log(supercell_user);
+// console.log(supercell_user);
 
 // below are object in objects
 
@@ -368,7 +368,7 @@ const data_base = {
     }
 }
 
-console.log(data_base.user2?.user_id);
+// console.log(data_base.user2?.user_id);
 
 //here the question mark is used so that it will check if the property or key exists in the 
 // object or not, if not then it won't throw an error just a warning and code won't crash
@@ -377,17 +377,17 @@ console.log(data_base.user2?.user_id);
 */
 
 let obj3 = Object.assign(obj2, supercell_user);
-console.log(obj3);
+// console.log(obj3);
 
 // a more simple way to combine objects and array is below:
 
 const obj4 = {...obj1, ...obj2, ...obj3};
-console.log('4th object is ', obj4);
+// console.log('4th object is ', obj4);
 
 // I can get only all the keys of an object as below:
 
 const obj_keys = Object.keys(supercell_user);
-console.log(obj_keys);
+// console.log(obj_keys);
 // and just like that we can also get the values
 
 // destructuring objects
@@ -413,22 +413,22 @@ function fun1(){
     console.log('Hello Skr_1978');
 }
 
-fun1();
+// fun1();
 
 function add(num1, num2)
 {
     console.log(num1 + num2);
 }
-let sum1 = add(2,5); 
-console.log("sum 1 is ", sum1); // ingteresting check console
+// let sum1 = add(2,5); 
+// console.log("sum 1 is ", sum1); // ingteresting check console
 
 function add2(num1, num2)
 {
     console.log(num1 + num2);
     return num1 + num2; //************/ */
 }
-let sum2 = add2(2,5);
-console.log("sum 2 is ", sum2);
+// let sum2 = add2(2,5);
+// console.log("sum 2 is ", sum2);
 
 // return statement won't print if only function is called if we log the 
 // function then we will see the return statement 
@@ -439,26 +439,26 @@ function cart_price (var1, ...num1){// check console
     return num1;
 }
 
-console.log(cart_price(110, 300, 289, 2786));
+// console.log(cart_price(110, 300, 289, 2786));
 
 // we can pass anything to a function even objects also as below:
 
 function object_handler (anyobject){
     console.log(`price is ${anyobject.price}`);
 }
-object_handler(course);
+// object_handler(course);
 // we can also pass array and objects directly in our function as below:
 
-object_handler({
-    price:"98456"
-});
+// object_handler({
+//     price:"98456"
+// });
 
 function array_handler (arr){
     console.log(`price is ${arr[4]}`);
 }
-array_handler(
-    [234,24,3252,326,3245,345,345]
-);
+// array_handler(
+//     [234,24,3252,326,3245,345,345]
+// );
 
 // don't use 'var' keyword to initiliaze variable
 
@@ -485,11 +485,11 @@ const web_user = {
     }
 }
 
-web_user.welcome_message();
+// web_user.welcome_message();
 
 // but what if we log "this" keyword here what will it give ans is below:
 
-console.log(this); // this will refer to an emoty object as it is referring to none
+// console.log(this); // this will refer to an emoty object as it is referring to none
 
 // but if we check the above log in browser then we will get windows properties
 
@@ -499,7 +499,7 @@ function skr(){
     console.log(this.user_name); // you will not get the value by this method;
     // this type of syntax is used in object mainly for accessing key values
 }
-skr();
+// skr();
 
 
 //            ☠️☠️☠️☠️☠️☠️☠️            
@@ -523,15 +523,15 @@ let fun6 = (parameters) => {
     return `hello arrow function`;
 }
 
-console.log(fun6());
+// console.log(fun6());
 
 // below are more ways to use arrow functions
 
 const add_num = () => `no return statement needed`
 const add_num2 = () => (`no return statement needed`)
 
-console.log(add_num()); 
-console.log(add_num2());
+// console.log(add_num()); 
+// console.log(add_num2());
 
 // Immediately Invoked Function Expressions IIFE
 // to immediately invoke function we wrap our function inside () and then use ()
@@ -546,7 +546,7 @@ console.log(add_num2());
 
 ( (parameter_here) => {
     // it is unamed iife0
-    console.log(`${parameter_here} is using arrow iife function`);
+    // console.log(`${parameter_here} is using arrow iife function`);
 })('arguments_here');
 
 
@@ -608,16 +608,16 @@ let result1 = add_nums(a, b);
 // control flow ☠️☠️☠️☠️☠️
 
 if (2== "2"){
-    console.log(true);
+    // console.log(true);
 }
 
 if(2 === "2")
 {
-    console.log(false);
+    // console.log(false);
 }
 
 //  using switch cases
-let month = 2;
+let month = 200;
 
 switch (month) {
     case 1:
@@ -628,7 +628,7 @@ switch (month) {
         break;
 
     default:
-        console.log(`don't know month`);
+        // console.log(`don't know month`);
         break;
 }
 
@@ -638,10 +638,10 @@ switch (month) {
 let email = "skjhfd@lkjdfg.in"
 
 if (email){
-    console.log(`got email`);
+    // console.log(`got email`);
 }
 else {
-    console.log(`didn't get email`);
+    // console.log(`didn't get email`);
 }
 
 // so here in above a non empty string is considered as true, so we will see which
@@ -659,8 +659,93 @@ else {
 
 
 ///            ☠️☠️☠️☠️☠️  loops  ☠️☠️☠️☠️☠️           ///
-console.log(`looping in a for loop`);
+// console.log(`looping in a for loop`);
 for (let i = 0; i<10; i++)
 {
-    console.log(i);
+    if (i === 5)
+    {
+        // console.log(`${i} will not be printed becuase of continue it is skipped`);
+        continue;
+    }
+    // console.log(i);
+    // because of continue the below code won't be executed and loop will start from
+    // next iteration due to 'continue';
+}
+
+//   while loops
+let i  = 0;
+while(i<12)
+{
+    // console.log(`logging in while loop i is ${i}`);
+    i++;
+    if(i === 11)
+    {
+        // console.log(`loop will now end due to it's condition`);
+    }
+}
+
+
+
+/// loops for arrays or objects☠️☠️☠️☠️☠️☠️
+
+// 1) for of loop 
+
+// ysntax of loop is below:
+
+// 👁️‍🗨️👁️‍🗨️👁️‍🗨️👁️‍🗨️👁️‍🗨️
+// for (const iterator of object) {
+    
+// }
+// 👁️‍🗨️👁️‍🗨️👁️‍🗨️👁️‍🗨️👁️‍🗨️
+
+const arr12 = [1,2,3,5,7,9]
+
+//this below is the most used
+for (const i of arr12) {
+    if (i%2 === 0) {
+        // console.log(`${i} is even number`);
+        continue;
+    }
+    // console.log(i);
+}
+
+// we can use this on a string as below to iterate through each value of string
+
+let str2 = "Subham Kumar";
+
+for (const i of str2) {
+    // console.log(`char is ${i}`);
+}
+
+// now we will take a look at maps
+
+let map = new Map();
+map.set('Anker', 'soundcore');
+map.set('Soundcore', 'qi10 life');
+map.set('Soundcore', 'qi10 life');
+// console.log(map);
+// maps hold only unique  values you cannot add identical entries in maps as above 
+
+// applying loop on map
+
+for (const i of map) {
+    // console.log(i);
+}
+// we can destructure the map as below by seperating the key and value pairs
+for (const [i, j] of map) {
+    // console.log(`${i} , ${j}`);
+}
+
+// applying forof loop in  objects;
+
+let game = {
+    game1:"NFS 2005",
+    game2:"GTA 5",
+    game3:"Forza Horizon 5"
+}
+
+
+// forof doesn't work on objects
+for (const [i, j] of game) {
+    // console.log(`${i} , ${j}`);
 }
