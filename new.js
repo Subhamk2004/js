@@ -912,7 +912,7 @@ operation
 
 // see the below console for results
 
-console.log(new_num_operations);
+// console.log(new_num_operations);
 
 // try using .reduce where you can't do things with the maps, filter , foreach
 
@@ -953,3 +953,56 @@ document.getElementById('heading1').innerHTML = '<h4>New Heading changed by sele
 // console.log(document.getElementById('heading1').id);
 // console.log(document.getElementById('heading1').className);
 // console.log(document.getElementById('heading1').getAttribute('id'));
+
+
+document.getElementById('heading1').setAttribute('class', 'title heading');
+
+let title = document.getElementById('heading1');// we can set the elemt as variable
+title.style.color = 'greenyellow';
+
+// console.log(title.textContent); // this gives full text in that element either it's hidden or not
+// console.log(title.innerText); // if text is hidden then this won't show that text
+// console.log(title.innerHTML); // thi will give the entire html that's present in that selected element
+
+// similar to getElementById we have same for classes which is:
+
+document.getElementsByClassName('heading'); // this will return an HTML collection
+
+// all operations can be applied on it;
+
+// most popular selector is querySelector:
+
+document.querySelector('p'); // this selects the first <p></p> elemt from the html
+document.querySelector('#title'); // this will select the id 'title'
+document.querySelector('.heading'); // this will select the class 'heading'
+
+// if we want to select an elemt with a particular class or title we can do as:
+
+document.querySelector('p').textContent = 'helll';
+
+let main_head = document.querySelector("h1");
+main_head.querySelector('h4').innerText = 'Changing 2nd time';
+
+// now querySelectorAll ⚡⚡⚡⚡
+
+let all_paras = document.querySelectorAll('p');
+
+// console.log(all_paras); // this won't return an array but it will look 
+// like array it is {Nodelist}
+
+// but we can select the elements from those as array as below:
+
+all_paras[1].style.color = 'wheat'; // this is much helpful when we have to 
+// apply a property on a particular elemnt from many elements of same type;
+let text = 'Hello this is para'
+let para_num = 0;
+all_paras.forEach( (para) => {
+    para.innerText = `${text} ${para_num}`;
+    para_num++;
+});
+
+// converting an html collection or node lists into array as below:
+
+let para_class = document.getElementsByClassName('paras')
+let array = Array.from(para_class);
+// console.log(array); // now we have our array from nodelist 
