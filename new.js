@@ -745,7 +745,211 @@ let game = {
 }
 
 
-// forof doesn't work on objects
-for (const [i, j] of game) {
-    // console.log(`${i} , ${j}`);
+// forof doesn't work on objects 
+// for (const [i, j] of game) {  
+//     console.log(`${i} , ${j}`);
+// }
+
+// for objects we use forin  loops:
+
+for (const i in game) {
+    // console.log(i); // this will just print the keys ;
+    // console.log(game[i]); // this will print the values only
+    // !! game.i won't print anything as i here is string so that won't work
 }
+
+// if we tryt to use forin on arrays tghen by simply printing the i we will just
+// get the keys and not the values:
+
+for (const i in arr12) {
+    // console.log(arr12[i]);
+}
+
+// ⚡⚡⚡⚡⚡⚡⚡⚡⚡higher order array loops⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡
+
+let game_lib = ['gta 5', 'nfs 2005', 'Real Racing 3', 'forza horizon 5', 'nfs payback'];
+
+
+// callback functions don'y have name and in foreach we use callback functions
+game_lib.forEach( function (item) {
+    // console.log(item);
+});
+/* advantage of foreach is that we don't have to define the loop it will
+1) automatically iterate through the array from the start
+2) can apply a function to each value of the array as a callback function
+3) we can use arrow functions also in foreach
+*/
+
+game_lib.forEach( (item /*here we pass the parameter not index*/) => {
+    //  console.log(item);
+     if(item === "gta 5")
+     {
+        // break;
+     }
+     // forEach is designed to iterate through the entire array, and break would
+     // disrupt that intended behavior.
+});
+
+// we  can also call function from outside to the foreach as below
+
+let check_rr3 = (val) => {
+    if(val === "Real Racing 3")
+    {
+        console.log(`We found the game ${val}`);
+        console.log('Exiting the function and loop');
+        return;
+    }
+    else {
+        console.log(`${val} is not rr3`);
+    }
+}
+
+// game_lib.forEach(check_rr3);
+
+// theses foreach callback functions can have 3 parameters which are :
+/*
+1) value
+2) index
+3) whole array
+*/
+
+game_lib.forEach( (value, index, array) =>{
+    // console.log(value, index, array);
+});
+
+// we will have to deal with the most common array menthods and synntax as below
+
+// which is objects inside array
+
+let car_details = [
+    {
+        car_name:"Altroz",
+        manufactured_by:"Tata",
+        model:2020,
+        engine:"V4"
+    },
+    {
+        car_name:"XUV700",
+        manufactured_by:"Mahindra",
+        model:2021,
+        engine:"V6"
+    },
+    {
+        car_name:"SF90",
+        manufactured_by:"Ferrari",
+        model:2018,
+        engine:"V6"
+    }
+]
+
+// foreach is mostly used for thses types of arrays⚡⚡⚡⚡⚡
+
+car_details.forEach( (value)=> {
+    // console.log(value.car_name);
+});
+
+// forEach doesn't return anything
+
+let arr112 = [1,3,5,7,9,2,4,6,8,10];
+
+// filter is also like forEach but it can return the values as below:
+let gerater_than_4 = arr112.filter( (num)=> {
+    if(num > 4)
+    {
+        return num;
+    }
+});
+// console.log(gerater_than_4); // this will return an array
+
+let car_model_checker = car_details.filter( (car_info) => {
+    return car_info.model >= 2019 && car_info.engine === "V6"; 
+    
+    
+    /*💎💎💎💎💎💎 this will check if the model 
+    of car is more than or equal to 2019 or not and if it's engine is V6 
+    or not and  it will then simply 
+    return the whole object for that car which satisfies the above conditions
+     in object form 💎💎💎💎💎*/
+});
+// console.log(car_model_checker);
+
+
+// now we will be trying⚡⚡⚡⚡ maps ⚡⚡⚡⚡⚡
+
+let my_num_arr = [1,2,3,4,5,6,7,8,9,10]
+
+
+// map can also return values but forEach don't
+let num_p10 = my_num_arr.map( (num) => {
+    return num + 10;
+});
+// console.log(num_p10);
+
+/*  ⚡⚡ now we will be using the chaining method which is very helpful
+in the backend ⚡⚡*/
+
+// below is an example of the chaining
+
+let new_num_operations = my_num_arr
+.map( (num) => {
+    return num*10;
+})
+.map( (num) => {
+    return num + 50;
+})
+.filter( (num) => {
+    return num>80 && num%20 === 0;
+    // filter can only condition check and return values that satify those
+    // conditions as above
+    // it won't perfrom direct operations as num + 80
+})
+
+/* 🆕 the above chaining works as, we know that the result of the first .map 
+will be in an array 👁️‍🗨️(in this case array is new_num_operations)👁️‍🗨️ then in the
+next map the newly updated array will go which was derived from the previous map
+operation
+*/
+
+// see the below console for results
+
+console.log(new_num_operations);
+
+// try using .reduce where you can't do things with the maps, filter , foreach
+
+// refer to 📜mdn docs📜 to understand anything in the js 
+// console.log(window);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+
+
+
+//     now we will be starting a very important of js which is  🏁🏁DOM🏁🏁🏁
+
+// in dom we have a structure of the webpage see the image inthe same folder
+// to understand document object model it can help us to rech different
+// elements of the webpage so look the image
+
+// console.log(document); 📜📜📜
+
+document.getElementById('heading1').innerHTML = '<h4>New Heading changed by selector</h4>';
+
+// console.log(document.getElementById('heading1').id);
+// console.log(document.getElementById('heading1').className);
+// console.log(document.getElementById('heading1').getAttribute('id'));
