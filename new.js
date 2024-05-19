@@ -1006,3 +1006,88 @@ all_paras.forEach( (para) => {
 let para_class = document.getElementsByClassName('paras')
 let array = Array.from(para_class);
 // console.log(array); // now we have our array from nodelist 
+
+
+const day_parent = document.querySelector('.day_parent');
+
+// we can also select the children of a parent div by mentioning their children as :
+
+//🆕🆕🆕 console.log(day_parent.children); //🆕🆕 this will return a n html collection, so not all but some
+// of the properties can be applied to the html collection
+
+// console.log(day_parent.children[2].innerText);
+
+for(let i = 0;i<day_parent.children.length; i++)
+{
+    // console.log(day_parent.children[i].innerHTML);
+    day_parent.children[i].style.color = 'white';
+}
+
+// console.log(day_parent.firstElementChild); // returns first elemne t opf the parent
+// console.log(day_parent.lastElementChild);
+
+// ⚡⚡⚡⚡⚡ till here we were selecting the child from parent, now we will select parent from child
+
+let day_one = document.querySelector('.day');
+
+// console.log(day_one.parentElement); // .parentElement gives the parent element of that child
+day_one.parentElement.style.border = 'solid';
+//⚡⚡⚡ now we can also move on to the next child of a parent from a child as :
+
+// console.log(day_one.nextElementSibling);
+
+day_one.nextElementSibling.innerText = 'next sibling of monday';
+
+// html collection s much simpler than Nodelist;
+// 🏁🏁node list is a very complex structure it even counts the line break , comments and all the elements obviously;
+
+// console.log(day_one.parentElement.childNodes); // 🏁🏁🏁do checkout this console💎
+
+//🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+
+// now we will be creating new elements in dom;
+
+let created_div1 = document.createElement('div');
+created_div1.className = "created_div";
+created_div1.id = "created_div1";
+created_div1.setAttribute("title", "created-title");
+created_div1.style.width = 'auto';
+created_div1.style.height = '100px';
+created_div1.style.border = 'solid';
+
+// creating Nodes is much much better for optimisation rather than doing it by innerText as below;
+// innertext or innerhtml just overwrites things which take more time 
+let text_node = document.createTextNode("This is a created Text node and it will be appended to the created div");
+
+created_div1.appendChild(text_node);
+// now just by doing the above we will not see the element on our page;;
+// as it is stored only in the memory and not loaded on the page, so we will now load the element and attach it to our page
+
+document.body.appendChild(created_div1);
+
+
+// let's make afunction to add new list of languages that the user passes;
+
+let add_lang = (lang_name)=> {
+    let lang_list = document.createElement('li');
+    lang_list.innerText = `${lang_name}`;
+    document.querySelector('.languages').appendChild(lang_list);
+}
+
+let add_optimised_lang = (lang_name)=> {
+    let lang_list = document.createElement('li');
+    lang_list.appendChild(document.createTextNode(lang_name));
+    document.querySelector('.languages').appendChild(lang_list);
+}
+
+// the above code uses text node which is very optimised code rather than just inserting innerhtml
+
+add_lang('C++'); // we called the function with the argument passed;
+
+document.querySelector('.languages').children[1].style.color = "aqua";
+
+// we can also change the whole outerhtml instead of innerhtml, which will change the whole element;
+
+// we can also remove any element easily as :
+
+let first_lang = document.querySelector('.languages').firstElementChild.remove();
