@@ -1092,3 +1092,5 @@ document.querySelector('.languages').children[1].style.color = "aqua";
 // we can also remove any element easily as :
 
 let first_lang = document.querySelector('.languages').firstElementChild.remove();
+
+console.log("the");
