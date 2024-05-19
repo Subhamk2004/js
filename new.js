@@ -16,6 +16,7 @@ let student = {
 }
 
 student.age++;
+let std = "comp";
 // console.log("changing the age of the studemnt as student.age++", age);
 num = '123';
 real_num = 1;
