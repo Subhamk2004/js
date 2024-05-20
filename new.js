@@ -156,6 +156,10 @@ let new_num = new Number(100);
 
 
 
+
+
+
+
 // now we will be using a maths method that is used in games  like ludo , which is .random
 
 let random_num  = Math.random();
@@ -170,6 +174,9 @@ const min = 10
 const max = 20
 
 // console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+
+
+
 
 
 
@@ -296,6 +303,8 @@ let open_arr = in_arr.flat(Infinity);
 
 
 
+
+
 // object literals
 
 let obj1  = {} // this is an empty object
@@ -407,6 +416,8 @@ const course = {
 
 
 
+
+
 // functions
 
 function fun1(){
@@ -462,6 +473,8 @@ function array_handler (arr){
 // );
 
 // don't use 'var' keyword to initiliaze variable
+
+
 
 
 
@@ -559,6 +572,9 @@ const add_num2 = () => (`no return statement needed`)
 
 
 
+
+
+
 ///     js code execution and call
 
 // first of all global execution context is made for sure
@@ -598,6 +614,9 @@ let result1 = add_nums(a, b);
 // will occur for that function 
 
 // after the function is executed the that new environment variable is deleted
+
+
+
 
 
 
@@ -659,6 +678,8 @@ else {
 
 
 
+
+
 ///            ☠️☠️☠️☠️☠️  loops  ☠️☠️☠️☠️☠️           ///
 // console.log(`looping in a for loop`);
 for (let i = 0; i<10; i++)
@@ -684,6 +705,12 @@ while(i<12)
         // console.log(`loop will now end due to it's condition`);
     }
 }
+
+
+
+
+
+
 
 
 
@@ -771,7 +798,7 @@ for (const i in arr12) {
 let game_lib = ['gta 5', 'nfs 2005', 'Real Racing 3', 'forza horizon 5', 'nfs payback'];
 
 
-// callback functions don'y have name and in foreach we use callback functions
+// callback functions don't have name and in foreach we use callback functions
 game_lib.forEach( function (item) {
     // console.log(item);
 });
@@ -1056,7 +1083,7 @@ created_div1.style.width = 'auto';
 created_div1.style.height = '100px';
 created_div1.style.border = 'solid';
 
-// creating Nodes is much much better for optimisation rather than doing it by innerText as below;
+// creating Nodes is much, much better for optimisation rather than doing it by innerText as below;
 // innertext or innerhtml just overwrites things which take more time 
 let text_node = document.createTextNode("This is a created Text node and it will be appended to the created div");
 
@@ -1084,6 +1111,8 @@ let add_optimised_lang = (lang_name)=> {
 // the above code uses text node which is very optimised code rather than just inserting innerhtml
 
 add_lang('C++'); // we called the function with the argument passed;
+add_lang('Python');
+add_optimised_lang('Flutter');
 
 document.querySelector('.languages').children[1].style.color = "aqua";
 
@@ -1093,4 +1122,104 @@ document.querySelector('.languages').children[1].style.color = "aqua";
 
 let first_lang = document.querySelector('.languages').firstElementChild.remove();
 
-console.log("the");
+// console.log("Only thing is that it will surely work so fine");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡
+// now we will be studying the event listeners
+
+
+// below is an on clicked event handler;
+document.getElementById('heading1').onclick = function (){
+    alert("Heading clicked");
+}
+
+// below is a better approach than onclick;
+// eventlisteners
+
+document.querySelector('.day_parent').addEventListener('click', function (e) {
+    alert('day parent clicked by event listeners');
+    console.log(e);
+}, false);
+
+// event listeners are very powerful, and more than that is the event that we have in our function as e
+
+// event listeners have 3 parameters first is the event, second is function, third is the true or false
+// by default, it is false;
+// false is for event bubbling, true is for event capturing
+
+// in event listeners we will mostly learn the below this in event listeners, these can be found by logging e event:🏁🏁🏁🏁🏁
+// type, timestamp, defaultPrevented
+// target, toElement, srcElement, currenttarget
+// clientX, screenX, screenY, clientY
+// altkey, ctrlkey, shiftkey, keyCode
+
+
+// in bubbling it goes from insdie to outside or bottom to top(false)
+// in capturing, it is different(true)
+
+// if we apply e.stopPropogation(), then the nested event may not happen and they will stop weherever we want to 
+
+
+// we also have a e.preventDefault() in event listeners , which will stop the default behavious of an element;
+
+document.querySelector('#images').addEventListener('click', function (e) {
+    let remove_img = e.target.parentNode;
+    let tagName_remover = e.target.tagName; // this .tagName gives the Name of that element be it li, ul, img, div etc;
+    console.log(remove_img);
+    console.log(tagName_remover);
+    if (tagName_remover === 'IMG')
+    {
+        console.log('entered if');
+        remove_img.remove();
+    }
+    console.log(e.target); // this target can be anything in the parent that is clicked;
+    // remove_img.remove(); // this has a problem undo comment if you want to know;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡
+// now we will be learning async functions  and async code;
+
+// below is the theory;
+
+/* JS is a synchronous language-- code executes from start to end code by code;
+// we have two types of code:
+
+1) blocking code -- it blocks the execution until the execution of that function or code is not completed
+// ex: wait a minute for me I am going to drink water, so you hold the work till I return
+// ex: user is registering on our site, we will tell him to wait till we store his data and then send him
+// success message of registration
+
+2) non-blocking code -- code will execute normally and will not halt
+// ex: you continue doing your work I am going to drink water, so continue working and don't wait for me
+*/
