@@ -1199,6 +1199,33 @@ document.querySelector('#images').addEventListener('click', function (e) {
 
 
 
+///////////////////////////////////////////////////////////////////////////////////
+
+start_timer_function = (minute) =>{
+    let seconds = 60;
+    function second_less(){
+        seconds--;
+        console.log(`${minute} : ${seconds}`);
+    }
+    setInterval(second_less,1000);
+
+    /*💎😳😳😳😳😳 we can set the function inside the setInterval itself if we don't want to define the
+    function outside our local scope
+     */
+    //////////////////////////////////////////////////////////////////////////
+    /* this approach gives us the access to local variables and rela time update of variables*/
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
