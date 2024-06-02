@@ -1024,10 +1024,11 @@ all_paras[1].style.color = 'wheat'; // this is much helpful when we have to
 // apply a property on a particular elemnt from many elements of same type;
 let text = 'Hello this is para'
 let para_num = 0;
-all_paras.forEach( (para) => {
-    para.innerText = `${text} ${para_num}`;
-    para_num++;
-});
+// all_paras.forEach( (para) => {
+//     para.innerText = `${text} ${para_num}`;
+//     para_num++;
+// 
+// });
 
 // converting an html collection or node lists into array as below:
 
@@ -1198,8 +1199,22 @@ document.querySelector('#images').addEventListener('click', function (e) {
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////
+
+// below function ⚡⚡⚡'setInterval'⚡⚡⚡ is an async js function
+// setTimeout() is also an async js function
+// ⚡⚡ clearInterval() is used to stop the execution of the setINterval function
+// ⚡⚡ clearTimeout() is used to to stop the execution of the setTimeout() function;
+
+let start_interval;
+
+
+
+// these funcuton will not execute like normal js and not line by line they might 
+// take time to execute and they will for sure get a delay even if their time or interval is of
+// 1s , when these will come then the functions of the js just below these will execute, even
+// if their timer interval is 0s.
+
 
 start_timer_function = (minute) =>{
     let seconds = 60;
@@ -1207,7 +1222,7 @@ start_timer_function = (minute) =>{
         seconds--;
         console.log(`${minute} : ${seconds}`);
     }
-    setInterval(second_less,1000);
+    start_interval = setInterval(second_less,1000);
 
     /*💎😳😳😳😳😳 we can set the function inside the setInterval itself if we don't want to define the
     function outside our local scope
@@ -1217,14 +1232,52 @@ start_timer_function = (minute) =>{
 
 
 }
+// these are very useful to create like popups or timers and many other useful things also
+
+clearInterval(start_interval); 
+// start_interval = null; // dereferencing the interval id !!!
 
 
+// in setInterval manily the functuon is given inside the setInterval handler
+//////////////////////////////////////////////////////////////////////////////////////
+// ⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡
 
+// very very important 
+// in setInterval we can't directly pass the argument to a function, but it's parameter can 
+// be passed by a third parameter which is present in the setInterval itself
+// example is below
+let minute;
+let seconds;
 
+document.querySelector('#get_min').addEventListener("click",
+    function (){
+    minute = Number(document.getElementById('min').value);
+    })
 
+document.querySelector('#get_sec').addEventListener("click",
+    function (){
+        seconds = Number(document.getElementById('sec').value);
+    })
 
+document.querySelector('#start_timer').addEventListener('click',
+    function (){
+     start  = setInterval(start_timer, 1000);
+    })
+start_timer = () =>{
+    seconds--;
+    if(seconds === 0)
+    {
+        minute--;
+        seconds = 60;
+    }
+    if (minute === -1)
+    {
+        return 0;
+    }
+    console.log(`${minute} : ${seconds}`);
+}
 
-
+let start;
 
 
 
@@ -1250,3 +1303,18 @@ start_timer_function = (minute) =>{
 2) non-blocking code -- code will execute normally and will not halt
 // ex: you continue doing your work I am going to drink water, so continue working and don't wait for me
 */
+
+
+////////////////////////////////////////////////////////////////////////////
+
+// ⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡/
+// below we will be now styding a very important event listener whic is :
+// ⚡⚡⚡ keydown ⚡⚡⚡ event listener
+
+window.addEventListener('keydown', (e) => {
+    document.querySelector('#key').innerHTML = e.key;
+    document.querySelector('#key_ascii').innerHTML = e.keyCode;
+    document.querySelector('#key_code').innerHTML = e.code;
+})
+
+
